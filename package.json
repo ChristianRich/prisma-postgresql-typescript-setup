@@ -1,0 +1,27 @@
+{
+  "name": "prisma-postgresql-typescript-setup",
+  "version": "1.0.0",
+  "description": "Getting started with Prisma, PostgreSQL and TypeScript",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx ts-node index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "db:client:generate": "npx prisma generate",
+    "db:migrate:dev": "npx prisma migrate dev",
+    "db:seed": "npx ts-node prisma/seed.ts",
+    "db:migrate:reset": "npx prisma migrate reset",
+    "db:reset:migrate:seed": "npm run db:migrate:reset && npm run db:migrate:dev && npm run db:seed"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^17.0.21",
+    "prisma": "^3.10.0",
+    "ts-node": "^10.6.0",
+    "typescript": "^4.6.2"
+  },
+  "dependencies": {
+    "@prisma/client": "^3.10.0"
+  }
+}
