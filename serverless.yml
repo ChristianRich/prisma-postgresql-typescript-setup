@@ -1,4 +1,4 @@
-service: cloudfunctionhub-rest-api
+service: my-prisma-postgresql-rest-api
 
 plugins:
   - serverless-webpack
@@ -17,11 +17,11 @@ provider:
   region: ap-southeast-2
   runtime: nodejs14.x
   environment:
-    DATABASE_URL: ${ssm:/dev/cloudfunctionhub/dbconn}
+    DATABASE_URL: ${ssm:/dev/my-app/my-connection}
 
 functions:
   getUser:
-    handler: src/handlers/getUser.main
+    handler: src/handlers/getUser.handler
     events:
       - http:
           path: /users/{username}

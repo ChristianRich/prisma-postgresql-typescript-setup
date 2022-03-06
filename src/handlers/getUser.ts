@@ -4,17 +4,17 @@ import { APIGatewayProxyEvent, APIGatewayProxyHandler } from 'aws-lambda';
 
 const client = new PrismaClient();
 
-export const main: APIGatewayProxyHandler = async (
+export const handler: APIGatewayProxyHandler = async (
   event: APIGatewayProxyEvent,
 ) => {
   const { pathParameters } = event;
-  const { username } = pathParameters as any;
+  const { username } = pathParameters as Record<string, string>;
 
   const user: User | null = await client.user.findFirst({
     where: {
       name: {
         equals: username,
-        mode: 'insensitive',
+        mode: 'insensitive', // ignore case
       },
     },
   });
@@ -25,7 +25,7 @@ export const main: APIGatewayProxyHandler = async (
       body: JSON.stringify({
         message: 'Not Found',
       }),
-    }
+    };
   }
 
   return {
