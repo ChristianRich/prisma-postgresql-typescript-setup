@@ -1,0 +1,30 @@
+service: cloudfunctionhub-rest-api
+
+plugins:
+  - serverless-webpack
+  - serverless-webpack-prisma
+  - serverless-offline
+
+custom:
+  webpack:
+    includeModules: true
+    packagerOptions:
+      scripts:
+        - prisma generate
+
+provider:
+  name: aws
+  region: ap-southeast-2
+  runtime: nodejs14.x
+  environment:
+    DATABASE_URL: ${ssm:/dev/cloudfunctionhub/dbconn}
+
+functions:
+  getUser:
+    handler: src/handlers/getUser.main
+    environment:
+      DATABASE_URL: ${ssm:/dev/cloudfunctionhub/dbconn}
+    events:
+      - http:
+          path: /users/{username}
+          method: get
