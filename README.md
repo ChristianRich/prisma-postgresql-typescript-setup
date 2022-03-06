@@ -26,7 +26,7 @@ This step is only required if you plan on running the app on localhost.
 DATABASE_URL=postgresql://user:password@host:port/db-name
 ```
 
-## Add secret database string AWS Parameter Store
+## Add secret database string to AWS Parameter Store
 
 When Serverless builds the deployment package, it fetches the database connection string from Parameter Store.
 
