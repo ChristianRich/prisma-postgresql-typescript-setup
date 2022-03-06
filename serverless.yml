@@ -11,10 +11,6 @@ custom:
     packagerOptions:
       scripts:
         - prisma generate
-  # Passing default arguments for serverless-webpack-prisma (block can safely be removed)
-  prisma:
-    installDeps: true
-    prismaPath: .
 
 provider:
   name: aws
@@ -26,8 +22,6 @@ provider:
 functions:
   getUser:
     handler: src/handlers/getUser.main
-    environment:
-      DATABASE_URL: ${ssm:/dev/cloudfunctionhub/dbconn}
     events:
       - http:
           path: /users/{username}

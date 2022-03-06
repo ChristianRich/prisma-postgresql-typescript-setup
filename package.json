@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "npx ts-node src/index.local.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "db:client:generate": "npx prisma generate",
     "db:migrate:dev": "npx prisma migrate dev",
     "db:seed": "npx ts-node prisma/seed.ts",
     "db:migrate:reset": "npx prisma migrate reset",
