@@ -265,6 +265,12 @@ npm run db:seed
 
 # Notes
 
+https://github.com/AmoDinho/prisma2-f1-demo
+
+https://www.npmjs.com/package/serverless-webpack-prisma
+
+
+
 ## PostgreSQL UI apps
 
 When testing I tried a few database GUI tools for quick data inspection.
