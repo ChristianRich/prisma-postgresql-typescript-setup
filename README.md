@@ -1,4 +1,4 @@
-# Prisma with PostgreSQL, TypeScript, Serverless, AWS Lambda and Parameter Store
+# Prisma with PostgreSQL, TypeScript, Serverless and Parameter Store
 
 This project is the outcome of following the [Prisma Getting Started](https://www.prisma.io/docs/getting-started/setup-prisma/start-from-scratch/relational-databases-typescript-postgres) guide.
 
